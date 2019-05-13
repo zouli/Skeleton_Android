@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.riverside.skeleton.android.base.activity.BaseActivity;
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 import com.riverside.skeleton.android.widget.activity.CommonWebActivity;
 import com.riverside.skeleton.android.widget.commonselect.CommonSelectActivity;
 import com.riverside.skeleton.android.widget.commonselect.CommonSelectOptions;
@@ -79,7 +79,7 @@ public class WidgetMainActivity extends BaseActivity {
     @OnActivityResult(COMMON_SELECT_RESULT)
     void onCommonSelectResult(int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
-            CLog.w(data.getStringExtra(CommonSelectOptions.RESULT_DATA_TITLE));
+            SLog.w(data.getStringExtra(CommonSelectOptions.RESULT_DATA_TITLE));
         }
     }
 

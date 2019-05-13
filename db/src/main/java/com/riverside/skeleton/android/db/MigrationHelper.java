@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 
 import org.greenrobot.greendao.AbstractDao;
 import org.greenrobot.greendao.database.Database;
@@ -62,7 +62,7 @@ public class MigrationHelper {
                 printLog("【Table】" + tableName + "\n ---Columns-->" + getColumnsStr(daoConfig));
                 printLog("【Generate temp table】" + tempTableName);
             } catch (SQLException e) {
-                CLog.e("【Failed to generate temp table】" + tempTableName, e);
+                SLog.e("【Failed to generate temp table】" + tempTableName, e);
             }
         }
     }
@@ -170,7 +170,7 @@ public class MigrationHelper {
                 db.execSQL("DROP TABLE " + tempTableName);
                 printLog("【Drop temp table】" + tempTableName);
             } catch (SQLException e) {
-                CLog.e("【Failed to restore data from temp table 】" + tempTableName, e);
+                SLog.e("【Failed to restore data from temp table 】" + tempTableName, e);
             }
         }
     }
@@ -195,8 +195,8 @@ public class MigrationHelper {
     }
 
     private static void printLog(String info) {
-        if (CLog.isDebug()) {
-            CLog.d(info);
+        if (SLog.isDebug()) {
+            SLog.d(info);
         }
     }
 }

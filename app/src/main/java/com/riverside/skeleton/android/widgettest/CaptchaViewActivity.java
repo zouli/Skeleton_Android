@@ -2,7 +2,7 @@ package com.riverside.skeleton.android.widgettest;
 
 import com.riverside.skeleton.android.R;
 import com.riverside.skeleton.android.base.activity.BaseActivity;
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 import com.riverside.skeleton.android.util.notice.SnackbarHelper;
 import com.riverside.skeleton.android.widget.captcha.BoxCaptchaView;
 import com.riverside.skeleton.android.widget.captcha.CaptchaView;
@@ -37,7 +37,7 @@ public class CaptchaViewActivity extends BaseActivity {
         bcv.setOnInputChangedListener(new CaptchaView.InputChangedListener() {
             @Override
             public void inputChanged(String text) {
-                CLog.w(text);
+                SLog.w(text);
             }
         });
     }

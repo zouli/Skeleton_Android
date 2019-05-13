@@ -4,7 +4,7 @@ import android.widget.TextView;
 
 import com.riverside.skeleton.android.R;
 import com.riverside.skeleton.android.base.fragment.BaseFragment;
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EFragment;
@@ -23,7 +23,7 @@ public class RxBusFragment extends BaseFragment {
             @Override
             public void accept(String s) throws Exception {
                 tv_title.setText(s);
-                CLog.w(s);
+                SLog.w(s);
             }
         });
     }

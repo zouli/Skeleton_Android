@@ -1,6 +1,6 @@
 package com.riverside.skeleton.android.base.utils;
 
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 
 /**
  * 二次点击判断类  1.0
@@ -26,10 +26,10 @@ public class NoDoubleClickUtils {
         long currentTime = System.currentTimeMillis();
         boolean isClick2;
 
-        CLog.d("start currentTime=%d,lastClickTime=%d,c-l=%d", currentTime, lastClickTime, currentTime - lastClickTime);
+        SLog.d("start currentTime=%d,lastClickTime=%d,c-l=%d", currentTime, lastClickTime, currentTime - lastClickTime);
         isClick2 = currentTime - lastClickTime <= SPACE_TIME;
         lastClickTime = currentTime;
-        CLog.d("end currentTime=%d,lastClickTime=%d,c-l=%d,isClick2=%b", currentTime, lastClickTime, currentTime - lastClickTime, isClick2);
+        SLog.d("end currentTime=%d,lastClickTime=%d,c-l=%d,isClick2=%b", currentTime, lastClickTime, currentTime - lastClickTime, isClick2);
 
         return isClick2;
     }

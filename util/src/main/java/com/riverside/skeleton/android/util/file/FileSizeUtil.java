@@ -1,6 +1,6 @@
 package com.riverside.skeleton.android.util.file;
 
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -30,7 +30,7 @@ public class FileSizeUtil {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            CLog.e("获取文件大小", "获取失败!");
+            SLog.e("获取文件大小", "获取失败!");
         }
         return FormetFileSize(blockSize, sizeType);
     }
@@ -52,7 +52,7 @@ public class FileSizeUtil {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            CLog.e("获取文件大小", "获取失败!");
+            SLog.e("获取文件大小", "获取失败!");
         }
         return FormetFileSize(blockSize);
     }
@@ -73,7 +73,7 @@ public class FileSizeUtil {
             fis.close();
         } else {
 //            file.createNewFile();
-            CLog.e("获取文件大小", "文件不存在!");
+            SLog.e("获取文件大小", "文件不存在!");
         }
         return size;
     }

@@ -16,7 +16,7 @@ import com.riverside.skeleton.android.base.utils.BackButtonHelper;
 import com.riverside.skeleton.android.basetest.MultipleFinishActivity_;
 import com.riverside.skeleton.android.basetest.RxBusActivity_;
 import com.riverside.skeleton.android.basetest.ValidateActivity_;
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 import com.riverside.skeleton.android.util.notice.ToastHelper;
 
 import org.androidannotations.annotations.AfterViews;
@@ -39,12 +39,12 @@ public class BaseMainActivity extends BaseActivity {
         ActivityStaticMonitor.get().addTransferListener(transferListener = new ActivityStaticMonitor.TransferListener() {
             @Override
             public void onBecameForeground() {
-                CLog.d("程序进入前台");
+                SLog.d("程序进入前台");
             }
 
             @Override
             public void onBecameBackground() {
-                CLog.d("程序进入后台");
+                SLog.d("程序进入后台");
             }
         });
     }

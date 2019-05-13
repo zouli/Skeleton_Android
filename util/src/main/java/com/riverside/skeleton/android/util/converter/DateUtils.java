@@ -103,7 +103,7 @@ public class DateUtils {
      */
     public static Calendar getTimes0am(Calendar date) {
         Calendar date0 = Calendar.getInstance();
-        date0.set(date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_MONTH));
+        date0.set(date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_MONTH), 0, 0, 0);
         return date0;
     }
 

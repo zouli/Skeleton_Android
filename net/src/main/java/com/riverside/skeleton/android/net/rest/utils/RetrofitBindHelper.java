@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import com.riverside.skeleton.android.base.application.BaseApplication;
 import com.riverside.skeleton.android.net.ConstUrls;
 import com.riverside.skeleton.android.net.rest.handler.SessionHandlerFactory;
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 import com.riverside.skeleton.android.util.packageinfo.PackageInfoUtils;
 
 import java.io.File;
@@ -113,7 +113,7 @@ public class RetrofitBindHelper {
 
         // 设置Log的生成级别
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        if (CLog.isDebug()) {
+        if (SLog.isDebug()) {
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         } else {
             interceptor.setLevel(HttpLoggingInterceptor.Level.NONE);

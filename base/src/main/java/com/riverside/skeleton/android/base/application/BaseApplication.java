@@ -11,7 +11,7 @@ import com.riverside.skeleton.android.base.utils.CollectInfo.OSInfo;
 import com.riverside.skeleton.android.base.utils.CollectInfo.OSVersionInfo;
 import com.riverside.skeleton.android.base.utils.CollectInfo.TelephonyInfo;
 import com.riverside.skeleton.android.base.utils.CrashCallback;
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 import com.zxy.recovery.core.Recovery;
 
 /**
@@ -29,7 +29,7 @@ public class BaseApplication extends MultiDexApplication {
         //保存Application单例对象
         instance = this;
 
-        CLog.init(getApplicationContext());
+        SLog.init(getApplicationContext());
 
         //设置收集信息
         CollectInfoHelper.init(instance);
@@ -41,19 +41,19 @@ public class BaseApplication extends MultiDexApplication {
                 , DisplayInfo.class
         );
 
-        if (CLog.isDebug()) {
+        if (SLog.isDebug()) {
             //开启Android的严格模式
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
             StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
         } else {
-            CLog.setLogLevel(CLog.LEVEL_ERROR);
+            SLog.setLogLevel(SLog.LEVEL_ERROR);
         }
 
         //启动防灾模式
         Recovery.getInstance()
-                .debug(CLog.isDebug())
+                .debug(SLog.isDebug())
                 .recoverInBackground(true)
-                .recoverStack(CLog.isDebug())
+                .recoverStack(SLog.isDebug())
                 .callback(new CrashCallback(getApplicationContext()))
                 .silent(true, Recovery.SilentMode.RESTART)
                 .init(this);

@@ -2,7 +2,7 @@ package com.riverside.skeleton.android.util.file;
 
 import android.text.TextUtils;
 
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -146,19 +146,19 @@ public class FileUtils {
         File srcFile = new File(src);
         File destFile = new File(dest);
         if (!srcFile.exists()) {
-            CLog.d("copyFile, source file not exist.");
+            SLog.d("copyFile, source file not exist.");
             return false;
         }
         if (!srcFile.isFile()) {
-            CLog.d("copyFile, source file not a file.");
+            SLog.d("copyFile, source file not a file.");
             return false;
         }
         if (!srcFile.canRead()) {
-            CLog.d("copyFile, source file can't read.");
+            SLog.d("copyFile, source file can't read.");
             return false;
         }
         if (destFile.exists() && reWrite) {
-            CLog.d("copyFile, before copy File, delete first.");
+            SLog.d("copyFile, before copy File, delete first.");
             destFile.delete();
         }
 

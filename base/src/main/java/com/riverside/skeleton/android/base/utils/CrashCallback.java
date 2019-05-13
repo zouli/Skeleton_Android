@@ -12,7 +12,7 @@ import com.riverside.skeleton.android.base.utils.CollectInfo.CollectInfoHelper;
 import com.riverside.skeleton.android.util.converter.DateUtils;
 import com.riverside.skeleton.android.util.file.FileHelper;
 import com.riverside.skeleton.android.util.file.FileUtils;
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 import com.zxy.recovery.callback.RecoveryCallback;
 
 import java.io.FileOutputStream;
@@ -35,8 +35,8 @@ public class CrashCallback implements RecoveryCallback {
 
     @Override
     public void stackTrace(String stackTrace) {
-        if (CLog.isDebug()) {
-            CLog.e("exceptionMessage:" + stackTrace);
+        if (SLog.isDebug()) {
+            SLog.e("exceptionMessage:" + stackTrace);
         }
         // 收集设备参数信息
         String infos = CollectInfoHelper.collectInfo();
@@ -46,25 +46,25 @@ public class CrashCallback implements RecoveryCallback {
 
     @Override
     public void cause(String cause) {
-        if (CLog.isDebug()) {
-            CLog.e("cause:" + cause);
+        if (SLog.isDebug()) {
+            SLog.e("cause:" + cause);
         }
     }
 
     @Override
     public void exception(String throwExceptionType, String throwClassName, String throwMethodName, int throwLineNumber) {
-        if (CLog.isDebug()) {
-            CLog.e("exceptionClassName:" + throwExceptionType);
-            CLog.e("throwClassName:" + throwClassName);
-            CLog.e("throwMethodName:" + throwMethodName);
-            CLog.e("throwLineNumber:" + throwLineNumber);
+        if (SLog.isDebug()) {
+            SLog.e("exceptionClassName:" + throwExceptionType);
+            SLog.e("throwClassName:" + throwClassName);
+            SLog.e("throwMethodName:" + throwMethodName);
+            SLog.e("throwLineNumber:" + throwLineNumber);
         }
     }
 
     @Override
     public void throwable(Throwable throwable) {
-        if (CLog.isDebug()) {
-            CLog.e(throwable.toString());
+        if (SLog.isDebug()) {
+            SLog.e(throwable.toString());
         }
     }
 
@@ -126,7 +126,7 @@ public class CrashCallback implements RecoveryCallback {
 
             return infos.toString();
         } catch (Exception e) {
-            CLog.e("an error occured while writing file...", e);
+            SLog.e("an error occured while writing file...", e);
         }
         return null;
     }

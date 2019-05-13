@@ -1,6 +1,6 @@
 package com.riverside.skeleton.android.net.rest.utils;
 
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 
 import java.net.ConnectException;
 import java.util.concurrent.TimeUnit;
@@ -49,7 +49,7 @@ public class RetryPolicy implements Function<Flowable<? extends Throwable>, Flow
                                 || wrapper.throwable instanceof TimeoutException)
                                 && wrapper.count < count + 1) {
                             //如果超出重试次数也抛出错误，否则默认是会进入onCompleted
-                            CLog.e("在" + delay + "毫秒后重试,共" + count + "次");
+                            SLog.e("在" + delay + "毫秒后重试,共" + count + "次");
                             return Flowable.timer(delay + (wrapper.count - 1) * increaseDelay, TimeUnit.MILLISECONDS);
                         }
                         return Flowable.error(wrapper.throwable);

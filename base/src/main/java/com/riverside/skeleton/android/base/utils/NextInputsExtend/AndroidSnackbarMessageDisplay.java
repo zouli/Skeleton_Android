@@ -11,7 +11,7 @@ import com.github.yoojia.inputs.Input;
 import com.github.yoojia.inputs.MessageDisplay;
 import com.github.yoojia.inputs.TextInput;
 import com.github.yoojia.inputs.ViewInput;
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 import com.riverside.skeleton.android.util.notice.SnackbarHelper;
 
 /**
@@ -29,12 +29,12 @@ public class AndroidSnackbarMessageDisplay implements MessageDisplay {
         } else if (input instanceof ViewInput) {
             inputView = ((ViewInput) input).inputView;
         } else {
-            CLog.e("- When use <AndroidMessageDisplay>, <TextInput> is recommend !");
+            SLog.e("- When use <AndroidMessageDisplay>, <TextInput> is recommend !");
             inputView = null;
         }
         // try show message
         if (inputView == null) {
-            CLog.w("- TestResult.message=" + message);
+            SLog.w("- TestResult.message=" + message);
             return;
         }
 

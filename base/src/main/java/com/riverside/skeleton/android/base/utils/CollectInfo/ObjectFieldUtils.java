@@ -2,7 +2,7 @@ package com.riverside.skeleton.android.base.utils.CollectInfo;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 
 import java.lang.reflect.Field;
 
@@ -30,7 +30,7 @@ public class ObjectFieldUtils {
                     infos.put(field.getName(), value.toString());
                 }
             } catch (Exception e) {
-                CLog.e("an error occurred when collect crash info", e);
+                SLog.e("an error occurred when collect crash info", e);
             }
         }
         return infos;

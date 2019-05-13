@@ -9,7 +9,7 @@ import com.riverside.skeleton.android.net.rest.ObservableHelper2;
 import com.riverside.skeleton.android.net.rest.utils.ObservableHelper;
 import com.riverside.skeleton.android.net.rest.utils.RestSubscriber;
 import com.riverside.skeleton.android.net.rest.utils.RetrofitBindHelper;
-import com.riverside.skeleton.android.util.log.CLog;
+import com.riverside.skeleton.android.util.log.SLog;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
@@ -39,7 +39,7 @@ public class NetMainActivity extends BaseActivity {
 
                     @Override
                     public void onError(Throwable t) {
-                        CLog.e("onError", t);
+                        SLog.e("onError", t);
                     }
 
                     @Override
@@ -109,7 +109,7 @@ public class NetMainActivity extends BaseActivity {
                 .subscribe(new RestSubscriber<String>() {
                     @Override
                     public void onNext(String s) {
-                        CLog.w(s);
+                        SLog.w(s);
                     }
 
                     @Override
