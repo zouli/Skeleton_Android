@@ -83,7 +83,12 @@ public class ActivityStackManager {
         if (activityList == null || activityList.isEmpty()) {
             return;
         }
-        multipleFinishFlag = activityList.size() - 1;
+        for (int i = activityList.size() - 1; i > multipleFinishFlag; i--) {
+            //防止有activity正在关闭中
+            if (activityList.get(i).isFinishing()) continue;
+            multipleFinishFlag = i;
+            break;
+        }
     }
 
     /**
