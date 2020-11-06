@@ -37,10 +37,10 @@ public class ActivityStaticMonitor implements Application.ActivityLifecycleCallb
             synchronized (ActivityStaticMonitor.class) {
                 if (instance == null) {
                     instance = new ActivityStaticMonitor();
-                    application.registerActivityLifecycleCallbacks(instance);
                 }
             }
         }
+        application.registerActivityLifecycleCallbacks(instance);
         return instance;
     }
 
